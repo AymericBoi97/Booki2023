@@ -744,8 +744,7 @@ width: auto;
       /* Cacher le texte en réduisant la taille de la police à zéro */
       font-size: 0;
      width:100px;
-      /* height:
-      /* Si nécessaire, ajuster la taille du bouton pour le SVG */
+      /* height:*/
     }
     input[type="text"] {
         width: 100%; /* Le champ de texte occupe toute la largeur du formulaire */
