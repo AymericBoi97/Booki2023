@@ -145,6 +145,7 @@ i {
     display: flex;
   }
   .button {
+    background-image: none;
     background-color: #0065fc;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -153,6 +154,12 @@ i {
     font-weight: bold;
     padding: 0 16px;
   }
+  /* Par défaut, affiche le texte "Rechercher" */
+.button::after {
+    content: "Rechercher";
+  }
+  
+
   .form i {
     font-size: 1.1em;
   }
@@ -480,24 +487,26 @@ width: auto;
 
 
 /* Small devices (phones, less than 768px) */
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
-
-
-    /* PARTIE HEADER  LOGO ET NAV */
-
-    .header {
-      flex-direction: column;
+    .main-container {
+        padding: 0px; /* j'ai enlevé le padding pour pouvoir avoir toute la largeur de la version mobile */
     }
-  
+    
+    /* PARTIE HEADER  LOGO ET NAV 
+    
+    .header {
+        flex-direction: column;
+    }
+    
     .header-img {
         margin-top: 30px;
     }
-  
+    
     .header-nav {
-      display: flex;
-      justify-content: space-between; /* Place les éléments de la navigation côte à côte */
-      align-items: center; /* Centre la navigation verticalement */
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
     }
     nav li:hover, nav li:focus {
         color: #0065FC;
@@ -506,12 +515,13 @@ width: auto;
     }
     
     li a {
-      font-size: 40px; /* Ajustez la taille du texte "Hébergements" et "Activités" selon vos préférences */
-      font-weight: normal; /* Réduit l'épaisseur (gras) du texte */
+        font-size: 25px; 
+        width: 100%;
+        flex-direction: row-reverse;
     }
-
-    /** PARTIE HEADER TITRE TEXTE ET SEARCH **/
-
+    
+        /* PARTIE HEADER TITRE TEXTE ET SEARCH *
+    
     .header-title{
         font-size: 48px;
         width: 100%;
@@ -520,56 +530,52 @@ width: auto;
     .info {
         padding-left: 32px;
         width: 100%;
-        font-size: 32px;
+        font-size: 24px;
     }        
-      label {
-        font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences */
-      }
-      .button {
-        font-size: 26px; /* Ajustez la taille du texte du bouton selon vos préférences */
-        padding: 10px 20px; /* Ajustez la taille du bouton selon vos préférences */
-      }
-      input[type="text"] {
-        width: 100%; /* Le champ de texte occupe toute la largeur du formulaire */
-        font-size: 26px; /* Ajustez la taille du texte du champ de texte selon vos préférences */
-      }
-
-      /** PARTIE HEADER FILTRE **/
-
-
-      .filter {
+    label {
+        font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences *
+    }
+    .button {
+        font-size: 26px; /* Ajustez la taille du texte du bouton selon vos préférences *
+        padding: 10px 20px; /* Ajustez la taille du bouton selon vos préférences *
+    }
+    input[type="text"] {
+        width: 100%; /* Le champ de texte occupe toute la largeur du formulaire *
+        font-size: 26px; /* Ajustez la taille du texte du champ de texte selon vos préférences *
+    }
+    
+    /** PARTIE HEADER FILTRE **
+    
+    
+    .filter {
         flex-direction: column;
-      }
-      .filter-title {
+    }
+    .filter-title {
         margin-right: 350px;
-        font-size: 1.5em;
+        font-size: 24px;
         justify-content: flex-start;
-      }
-      .filter-content{
+    }
+    .filter-content{
         display: grid;
         grid-template-columns: 200px 200px;
         grid-column-gap: 33%;
-      }
-      .emoji {
+    }
+    .emoji {
         width: 150%;
         justify-content: space-evenly;
         height: 100px;
-      }
-
-      .filtre_seul {
+    }
+    
+    .filtre_seul {
         font-size: 25px;
         width: 100%;
         height: 60px;
         border-color: #0065fc;
         border-radius: 50px;
-      }
-  
-      
-    /* PARTIE HEBERGEMENT POPULAIRE & ACTIVITES */
+    }   
 
-    .hebergements-and-populaires {
-        flex-direction: column-reverse;
-    }    
+    /* PARTIE HEBERGEMENT POPULAIRE & ACTIVITES *
+
     .hebergements-cards,
     .populaires-cards,
     .activites-cards,
@@ -578,26 +584,192 @@ width: auto;
         flex-direction: column;
         object-fit: cover;
     }
-    .activites-cards .card {
-        display: grid;
-        margin-left: 90px;
-        grid-template-columns: 250px;
-        width: 500px;
-    }
+
     .hebergements-cards img,
     .activites-cards img{
-        width: 500px;
+        width: 100%;
     }
+    .hebergements-and-populaires{
+        flex-direction: column-reverse;
+    }
+    .hebergements-and-populaires section{
+        border-radius: 0px;
+        width: 100%;
+    }    
+    /* -------------- Hebergement ----------------*
 
+    .hebergements-and-populaires #hebergements {
+        background-color: white; /* modification de la couleur du background *
+    }
+    .hebergements-cards a {
+        width: 100%;
+        height: 80%;
+    }
+    .hebergements-cards .card {
+        width: 400px;
+    }
+    
+    
+    /* -------------- Populaire ----------------- *
+    
     .populaires .section-title {
-        font-size: 48px;
+        font-size: 24px;
     }
     .populaires-cards .card {
-        width: 330%;
+        width: 400px;
         height: 200px;
     }
     .populaires-cards img {
         width: 50%;
         height: 100%;
     }
+    .populaires-cards a {
+        width: 30%;
+    }
+    /* ----------------- Activites ----------------*
+
+    .activites-cards .card {
+        display: grid;
+        margin-left: 90px;
+        grid-template-columns: 250px;
+        width: 500px;
+    }
+    */
+
+    
+    .footer-content {
+        flex-direction: column;
+        font-size: x-large;
+        width: 100%;
+    }
+
+    #activites {
+        margin-bottom: 10%;
+    }
+    .activites-title {
+        padding-left: 20px;
+    }
+    .activites-cards {
+        padding-left: 50px;
+        flex-direction: column;
+    }
+    .activites-cards a{
+        width: 600px;
+    }
+    .activites-cards img {
+        height: 300px;
+    }
+    
+    .hebergements-and-populaires {
+        flex-direction: column-reverse;
+    }
+    .hebergements-and-populaires #hebergements {
+        background-color: white;
+    }
+    .hebergements-cards {
+        flex-direction: column;
+    }
+    .hebergements-cards a {
+        width: 70%;
+    }
+    .hebergements-cards .card {
+        height: 5%;
+        width: 550px;
+    }
+    .hebergements-cards img {
+        height: 250px;
+    }
+
+    .populaires {
+        width: 630px;
+    }
+    .populaires-cards {
+        align-items: center;
+        flex-direction: column;
+    }
+    .populaires-cards a {
+        width: 90%;
+    }
+    .populaires-cards .card {
+        height: 250px;
+    }
+    .populaires-cards img {
+        height: 100%;
+    }
+
+
+    .filter {
+        flex-direction: column;
+    }
+    
+    .filter-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Espace entre les éléments */
+    }
+    
+    .filtre_seul {
+        
+        width: 300px;
+        height: 70px;
+        border-radius: 36px;
+    }
+
+    .button::after {
+      content: "";
+    }
+    
+    /* Ajoute l'icône de loupe */
+    .button::before {
+      content: "\f002"; /* Code Unicode de l'icône de loupe */
+      font-family: "Font Awesome 5 Free"; /* Assurez-vous d'avoir la bonne famille de polices */
+      font-weight: 900; /* Le poids de la police correspondant à l'icône */
+      margin-right: 5px; /* Espace à droite de l'icône */
+    } 
+
+    .header-title{
+        font-size: 30px;
+        width: 450px;
+    }
+    .header-txt,
+    .info {
+        padding-left: 32px;
+        width: 100%;
+        font-size: 24px;
+    }        
+    label {
+        font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences */
+    }
+    .button {
+      /* Cacher le texte en réduisant la taille de la police à zéro */
+      font-size: 0;
+     width:100px;
+      /* height:
+      /* Si nécessaire, ajuster la taille du bouton pour le SVG */
+    }
+    input[type="text"] {
+        width: 100%; /* Le champ de texte occupe toute la largeur du formulaire */
+        font-size: 26px; /* Ajustez la taille du texte du champ de texte selon vos préférences */
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header-nav ul li a {
+        font-size: 30px;
+        padding: 30px;
+        margin: 9px;
+    }
+    nav li {
+        border-bottom:  2px solid #f2f2f2;
+    }
+    nav li:hover {
+        border-top: none;
+        border-bottom: 2px solid #0065FC;
+    } 
+    
+    .header-img {
+        padding-left: 300px;
+        padding-bottom: 50px;
+    }
+
 }
