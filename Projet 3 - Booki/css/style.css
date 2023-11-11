@@ -94,7 +94,6 @@ a {
   nav ul li a {
     text-decoration: none;
     color: black;
-    padding: 30px;
   }
   
   nav ul li a:hover {
@@ -121,7 +120,22 @@ i {
     border-radius: 100px;
     color: #0065fc;
   }
+  .button-magnifying-glass {
+    background-image: none;
+    background-color: #0065fc;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border: 1px solid #0065fc;
+    color: white;
+    font-weight: bold;
+    padding: 0 16px;
+    display: none;
+  }
+  .fa-magnifying-glass {
+    color:white;
 
+    
+  }
   .form label {
     background-color: #f2f2f2;
     width: 45px;
@@ -174,7 +188,7 @@ i {
   .form {
     padding: 0 20px;
     margin-top: 30px;
-    width: max-content;
+    width: 100%;
   }
   .form label {
     height: 51px;
@@ -386,7 +400,6 @@ width: auto;
     width: 300px;
     height: 80%;
     padding: 0px 0px 10px;
-    text-align: justify;
 }
 
 .activites-cards img {
@@ -409,12 +422,11 @@ width: auto;
 .footer-content {
     background-color: var(--main-bg-color);
     display: flex;
-    /* flex-direction: row; */
-    justify-content: space-evenly;
 }
 
 .footer-txt {
     list-style: none;
+    margin-right: 14%;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -488,155 +500,15 @@ width: auto;
 
 /* Small devices (phones, less than 768px) */
 @media screen and (max-width: 767px) {
+    body {
+        margin: 0;
+        padding: 0px;
+    }
 
     .main-container {
         padding: 0px; /* j'ai enlevé le padding pour pouvoir avoir toute la largeur de la version mobile */
     }
-    
-    /* PARTIE HEADER  LOGO ET NAV 
-    
-    .header {
-        flex-direction: column;
-    }
-    
-    .header-img {
-        margin-top: 30px;
-    }
-    
-    .header-nav {
-        display: flex;
-        justify-content: space-between; 
-        align-items: center; 
-    }
-    nav li:hover, nav li:focus {
-        color: #0065FC;
-        border-bottom: 2px solid #0065FC;
-        border-top: none;
-    }
-    
-    li a {
-        font-size: 25px; 
-        width: 100%;
-        flex-direction: row-reverse;
-    }
-    
-        /* PARTIE HEADER TITRE TEXTE ET SEARCH *
-    
-    .header-title{
-        font-size: 48px;
-        width: 100%;
-    }
-    .header-txt,
-    .info {
-        padding-left: 32px;
-        width: 100%;
-        font-size: 24px;
-    }        
-    label {
-        font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences *
-    }
-    .button {
-        font-size: 26px; /* Ajustez la taille du texte du bouton selon vos préférences *
-        padding: 10px 20px; /* Ajustez la taille du bouton selon vos préférences *
-    }
-    input[type="text"] {
-        width: 100%; /* Le champ de texte occupe toute la largeur du formulaire *
-        font-size: 26px; /* Ajustez la taille du texte du champ de texte selon vos préférences *
-    }
-    
-    /** PARTIE HEADER FILTRE **
-    
-    
-    .filter {
-        flex-direction: column;
-    }
-    .filter-title {
-        margin-right: 350px;
-        font-size: 24px;
-        justify-content: flex-start;
-    }
-    .filter-content{
-        display: grid;
-        grid-template-columns: 200px 200px;
-        grid-column-gap: 33%;
-    }
-    .emoji {
-        width: 150%;
-        justify-content: space-evenly;
-        height: 100px;
-    }
-    
-    .filtre_seul {
-        font-size: 25px;
-        width: 100%;
-        height: 60px;
-        border-color: #0065fc;
-        border-radius: 50px;
-    }   
 
-    /* PARTIE HEBERGEMENT POPULAIRE & ACTIVITES *
-
-    .hebergements-cards,
-    .populaires-cards,
-    .activites-cards,
-    .footer-content{
-        display: flex;
-        flex-direction: column;
-        object-fit: cover;
-    }
-
-    .hebergements-cards img,
-    .activites-cards img{
-        width: 100%;
-    }
-    .hebergements-and-populaires{
-        flex-direction: column-reverse;
-    }
-    .hebergements-and-populaires section{
-        border-radius: 0px;
-        width: 100%;
-    }    
-    /* -------------- Hebergement ----------------*
-
-    .hebergements-and-populaires #hebergements {
-        background-color: white; /* modification de la couleur du background *
-    }
-    .hebergements-cards a {
-        width: 100%;
-        height: 80%;
-    }
-    .hebergements-cards .card {
-        width: 400px;
-    }
-    
-    
-    /* -------------- Populaire ----------------- *
-    
-    .populaires .section-title {
-        font-size: 24px;
-    }
-    .populaires-cards .card {
-        width: 400px;
-        height: 200px;
-    }
-    .populaires-cards img {
-        width: 50%;
-        height: 100%;
-    }
-    .populaires-cards a {
-        width: 30%;
-    }
-    /* ----------------- Activites ----------------*
-
-    .activites-cards .card {
-        display: grid;
-        margin-left: 90px;
-        grid-template-columns: 250px;
-        width: 500px;
-    }
-    */
-
-    
     .footer-content {
         flex-direction: column;
         font-size: x-large;
@@ -650,14 +522,18 @@ width: auto;
         padding-left: 20px;
     }
     .activites-cards {
-        padding-left: 50px;
+        padding: 15px;
         flex-direction: column;
     }
     .activites-cards a{
-        width: 600px;
+        padding-left: 15px;
+        width: 100%;
     }
     .activites-cards img {
-        height: 300px;
+        height: 200px;
+    }
+    .activites-cards .card {
+        width: 93%;
     }
     
     .hebergements-and-populaires {
@@ -666,32 +542,35 @@ width: auto;
     .hebergements-and-populaires #hebergements {
         background-color: white;
     }
+    .hebergements-and-populaires section {
+        border-radius: 0px;
+    }
     .hebergements-cards {
         flex-direction: column;
     }
     .hebergements-cards a {
-        width: 70%;
+        width: 100%;
     }
     .hebergements-cards .card {
         height: 5%;
-        width: 550px;
+        width: 96%;
     }
     .hebergements-cards img {
-        height: 250px;
+        height: 120px;
     }
 
     .populaires {
-        width: 630px;
+        width: 100%;
     }
     .populaires-cards {
         align-items: center;
         flex-direction: column;
     }
     .populaires-cards a {
-        width: 90%;
+        width: 100%;
     }
     .populaires-cards .card {
-        height: 250px;
+        height: 146px;
     }
     .populaires-cards img {
         height: 100%;
@@ -699,7 +578,7 @@ width: auto;
 
 
     .filter {
-        flex-direction: column;
+        width: 100%;
     }
     
     .filter-content {
@@ -726,14 +605,18 @@ width: auto;
       font-weight: 900; /* Le poids de la police correspondant à l'icône */
       margin-right: 5px; /* Espace à droite de l'icône */
     } 
-
+    .header {
+        padding-left: 15px;
+    }
+    .header-content {
+        padding: 15px;
+    }
     .header-title{
         font-size: 30px;
-        width: 450px;
+        width: 100%;
     }
     .header-txt,
-    .info {
-        padding-left: 32px;
+    .info {  /* passer toute la section en padding */
         width: 100%;
         font-size: 24px;
     }        
@@ -742,33 +625,45 @@ width: auto;
     }
     .button {
       /* Cacher le texte en réduisant la taille de la police à zéro */
-      font-size: 0;
-     width:100px;
-      /* height:*/
+        display: none;
+    }
+
+    .button-magnifying-glass {
+        display: block;
+        border-radius: 12px;
+    }
+    input#town {
+        width: 150px;
     }
     input[type="text"] {
-        width: 100%; /* Le champ de texte occupe toute la largeur du formulaire */
-        font-size: 26px; /* Ajustez la taille du texte du champ de texte selon vos préférences */
+        font-size: 16px; /* Ajustez la taille du texte du champ de texte selon vos préférences */
     }
     .header {
         flex-direction: column;
     }
     .header-nav ul li a {
-        font-size: 30px;
-        padding: 30px;
-        margin: 9px;
+        font-size: 22px;
+    }
+    nav {
+        align-items: center;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    nav ul {
+        padding-left: 20px;
     }
     nav li {
         border-bottom:  2px solid #f2f2f2;
     }
-    nav li:hover {
+    nav ul li:hover {
         border-top: none;
         border-bottom: 2px solid #0065FC;
     } 
     
     .header-img {
-        padding-left: 300px;
-        padding-bottom: 50px;
+        padding-top: 20px;
+        padding-left: 41%;
+        padding-bottom: 20px;
     }
 
 }
