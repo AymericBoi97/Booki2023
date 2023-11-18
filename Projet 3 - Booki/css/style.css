@@ -71,8 +71,9 @@ a {
 
 
 .header-img {
-    width: 80px;
-    object-fit: contain;
+  width: 61px;
+  height: 19px;
+  margin-top: 30px;
   }
 
   nav {
@@ -88,7 +89,7 @@ a {
   }
   nav ul li {
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
   }
   
   nav ul li a {
@@ -100,13 +101,11 @@ a {
     color: #0065fc;
   }
   
-  nav li:hover, nav li:focus {
+  nav li a:hover, nav li a:focus {
     color: #0065FC;
     border-top: 2px solid #0065FC;
     list-style-type: none;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-top: 15px;
   }
 
@@ -229,11 +228,11 @@ i {
     align-items: center;
     justify-content: space-evenly;
     width: 120px;
-    height: 40px;
     border: 1px solid #d9d9d9;
     height: 40px;
     border-radius: 25px 25px 25px 25px;
     margin-left: 10px;
+    padding: 0px 10px 0 10px;
 }
 
 .filtre_seul:hover {
@@ -245,12 +244,14 @@ i {
     align-items: baseline; 
   }
   .info_logo {
+    align-items: baseline;
     width: 20px;
     height: 20px;
     display: flex; 
     border-radius: 50%;
     border: 2px solid #f2f2f2;
     justify-content: center; 
+    margin-right: 5px;
   }
   
   .info_texte {
@@ -411,6 +412,7 @@ width: auto;
 
 .activites-cards .card-content {
     padding-left: 15px;
+    margin: -10px 0px 0px 0px;
 }
 
 .activites-cards .card-title {
@@ -427,8 +429,15 @@ width: auto;
 .footer-txt {
     list-style: none;
     margin-right: 14%;
+    margin-top: 2px;
 }
 
+.footer-content ul li {
+    padding-bottom: 10px;
+}
+.footer-content ul li h3 {
+    margin-bottom: 0px;
+}
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
@@ -511,7 +520,7 @@ width: auto;
 
     .footer-content {
         flex-direction: column;
-        font-size: x-large;
+        font-size: 16px;
         width: 100%;
     }
 
@@ -543,8 +552,9 @@ width: auto;
         background-color: white;
         padding: 0px;
     }
-    .hebergements-title {
-        padding-left: 7px;
+    .hebergements-title,
+    #hebergements h3  {
+        padding-left: 29px;
     }
     .hebergements-and-populaires section {
         border-radius: 0px;
@@ -595,7 +605,7 @@ width: auto;
     .filtre_seul {
         
         width: 300px;
-        height: 70px;
+        height: 50px;
         border-radius: 36px;
     }
 
@@ -620,7 +630,7 @@ width: auto;
     .header-txt,
     .info {  /* passer toute la section en padding */
         width: 100%;
-        font-size: 24px;
+        font-size: 17px;
     }        
     label {
         font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences */
@@ -633,9 +643,17 @@ width: auto;
     .button-magnifying-glass {
         display: block;
         border-radius: 12px;
+        margin-left: -40px;
+        box-shadow: 0px 4px 3px lightgrey;
+    }
+    .form {
+        padding: 0px;
+    }
+    .search {
+        width: 100%;
     }
     input#town {
-        width: 150px;
+        width: calc(100% - 85px);
     }
     input[type="text"] {
         font-size: 16px; /* Ajustez la taille du texte du champ de texte selon vos préférences */
@@ -644,26 +662,30 @@ width: auto;
         flex-direction: column;
     }
     .header-nav ul li a {
-        font-size: 22px;
+        font-size: 20px;
     }
-    .header-nav {
-        display: block;
+    nav {
+     margin-bottom: 0;
     }
 
     nav ul {
+        display: flex;
         text-align: center;
         width: 100%;
+    }
+    nav ul li  {
+        padding: 20px 0;
+        text-align: center;
+        width: calc(50% - 1px);
     }
 
     nav li {
         display: block;
         margin: 10px 0;
+        border-bottom:  2px solid #f2f2f2;  
     }
-    nav li {
-        border-bottom:  2px solid #f2f2f2;
-        
-    }
-    nav ul li:hover {
+    nav li a:hover , nav li a:focus {
+        padding: 20px 0;
         border-top: none;
         border-bottom: 2px solid #0065FC;
     } 
