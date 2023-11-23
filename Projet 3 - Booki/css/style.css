@@ -185,7 +185,6 @@ i {
     font-size: 1.5em;
   }
   .form {
-    padding: 0 20px;
     margin-top: 30px;
     width: 100%;
   }
@@ -219,6 +218,9 @@ i {
     border-radius: 50%;
     min-width: 39px; 
     min-height: 39px; 
+  }
+  .info_texte {
+    margin-bottom: 20px;
   }
 
   
@@ -289,7 +291,7 @@ width:max-content;
 }
 
 .hebergements-cards {
-    margin-top: 50px;
+    margin-top: 33px;
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -448,8 +450,12 @@ width: auto;
     .filter {
         flex-direction: column;
     }
+    .info_texte {
+        margin-bottom: 0px;
+    }
     .hebergements-and-populaires {
         flex-direction: column;
+        margin-top: -30px;
     }
 
     #hebergements,
@@ -526,6 +532,7 @@ width: auto;
 
     #activites {
         margin-bottom: 10%;
+        margin-top: 30px;
     }
     .activites-title {
         padding-left: 20px;
@@ -553,18 +560,22 @@ width: auto;
         padding: 0px;
     }
     .hebergements-title,
-    #hebergements h3  {
+    .plus {
         padding-left: 29px;
     }
     .hebergements-and-populaires section {
         border-radius: 0px;
+        margin-top: 20px;
     }
     .hebergements-cards {
         flex-direction: column;
         padding: 29px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
     .hebergements-cards a {
         width: 100%;
+        padding-bottom: 20px;
     }
     .hebergements-cards .card {
         height: 5%;
@@ -572,6 +583,9 @@ width: auto;
     }
     .hebergements-cards img {
         height: 120px;
+    }
+    .plus {
+        margin-top: -30px;
     }
 
     .populaires {
@@ -624,13 +638,18 @@ width: auto;
         padding: 15px;
     }
     .header-title{
-        font-size: 30px;
+        font-size: 25px;
         width: 100%;
+        text-align: center;
     }
+    /*.header-txt{
+        text-align: center;
+    }*/
     .header-txt,
     .info {  /* passer toute la section en padding */
         width: 100%;
         font-size: 17px;
+        text-align: center;
     }        
     label {
         font-size: 24px; /* Ajustez la taille de l'icône du formulaire selon vos préférences */
@@ -684,7 +703,7 @@ width: auto;
         margin: 10px 0;
         border-bottom:  2px solid #f2f2f2;  
     }
-    nav li a:hover , nav li a:focus {
+    nav ul li a:hover , nav ul li a:focus {
         padding: 20px 0;
         border-top: none;
         border-bottom: 2px solid #0065FC;
@@ -697,3 +716,18 @@ width: auto;
     }
 
 }
+
+/*  
+    18/11
+    
+    Modification bouton filtre partie desktop 
+    Modification de l'icone i 
+    Modification de la nav desktop qui était pas a la bonne hauteur 
+    Modification de la hauteur du texte dans les card Activites
+    Modification du footer ajout de l'espace entre chaque li ajoute d'un margin top 
+    Modification du bouton recherche en mobile ajout du box shadow
+    Modification nav en mobile a améliorer encore
+    Modification de quelques erreur dans le css ( consigne en doublons )
+
+
+    Passez au W3C 
